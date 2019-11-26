@@ -8,7 +8,7 @@ char ** parse_args(char *line){
   char *token;
   int i = 0;
   while (curr != NULL){
-    token = strsep(curr, " ");
+    token = strsep(&curr, " ");
     args[i] = token;
     i += sizeof(token) + 1;
   }
