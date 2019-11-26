@@ -19,12 +19,12 @@ char ** parse_args(char *line){
 }
 
 int main(){
-  printf("> ");
-  char buf[128];
-  fgets(buf,128,stdin);
-  char **args = parse_args(buf);
-  //char c[100] = "ls -a -l";
-  //char **args = parse_args(c);
+  //printf("> ");
+  //char buf[128];
+  //fgets(buf,128,stdin);
+  //char **args = parse_args(buf);
+  char c[100] = "ls -a -l\n";
+  char **args = parse_args(c);
   execvp(args[0], args);
   free(args);
 }
