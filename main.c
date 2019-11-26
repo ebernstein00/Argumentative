@@ -1,15 +1,13 @@
-/*#include <string.h>
+#include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 
 char ** parse_args(char *line){
-  char **args = malloc(5 * sizeof(char *));
+  char **args = malloc(1000);
   char *curr = line;
-  //char *token;
   int i = 0;
   while (*curr != '\0'){
-    //token = strsep(&curr, " ");
     args[i++] = strsep(&curr, " ");
   }
   args[i] = NULL;
@@ -22,8 +20,8 @@ int main(){
   execvp(args[0], args);
   free(args);
 }
-*/
 
+ /*
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
@@ -54,3 +52,4 @@ int main(){
   execvp(args[0],args);
   free(args);
 }
+*/
