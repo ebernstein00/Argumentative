@@ -4,9 +4,9 @@
 #include <unistd.h>
 
 char ** parse_args(char *line){
-  char **args = malloc(100);
+  char **args = malloc(5 * sizeof(char *));
   char *curr = line;
-  char *token;
+  //char *token;
   int i = 0;
   while (*curr != '\0'){
     //token = strsep(&curr, " ");
@@ -17,6 +17,7 @@ char ** parse_args(char *line){
 }
 
 int main(){
+  printf("test");
   char ** args = parse_args("ls -a -l");
   execvp(args[0], args);
   free(args);
