@@ -1,6 +1,7 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <exec.h>
 
 char ** parse_args(char *line){
   char **args = malloc(100);
