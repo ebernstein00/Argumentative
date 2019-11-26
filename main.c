@@ -26,7 +26,7 @@ int main(){
   //char buf[128];
   //fgets(buf,128,stdin);
   //char **args = parse_args(buf);
-  char *c = "ls -a -l";
+  char c[100] = "ls -a -l";
   char **args = parse_args(c);
   execvp(args[0], args);
   free(args);
