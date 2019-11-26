@@ -12,7 +12,7 @@ char ** parse_args(char *line){
     args[i++] = strsep(&curr, " ");
     if (i > arsize){
       arsize *= 2;
-      args = realloc(arsize * sizeof(char *));
+      args = realloc(args, arsize * sizeof(char *));
     }
   }
   args[i] = NULL;
