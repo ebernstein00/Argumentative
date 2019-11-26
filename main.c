@@ -9,9 +9,11 @@ char ** parse_args(char *line){
   char *token;
   int i = 0;
   while (*curr != '\0'){
-    token = strsep(&curr, " ");
-    args[i++] = token;
+    //token = strsep(&curr, " ");
+    args[i++] = strsep(&curr, " ");
   }
+  args[i] = NULL;
+  return args;
 }
 
 int main(){
