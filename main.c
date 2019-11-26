@@ -10,7 +10,7 @@ char ** parse_args(char *line){
   char *curr = line;
   int i = 0;
   while (*curr != '\0'){
-    args[i++] = strsep(&curr, " ");
+    args[i++] = strsep(&curr, " \n");
     if (i > arsize){
       arsize *= 2;
       args = realloc(args, arsize * sizeof(char *));
