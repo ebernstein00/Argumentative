@@ -11,7 +11,7 @@ char ** parse_args(char *line){
   int i = 0;
   while (*curr != '\0'){
     //token = strsep(&curr, " ");
-    args[i++] = strsep(&curr, " ");
+    args[i++] = strsep(&curr, " \n");
     //printf("%s\n", token);
   }
   args[i] = NULL;
