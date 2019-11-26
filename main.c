@@ -7,12 +7,12 @@ char ** parse_args(char *line){
   printf("test\n");
   char **args = malloc(5 * sizeof(char *));
   char *curr = line;
-  char *token;
+  //char *token;
   int i = 0;
   while (*curr != '\0'){
-    token = strsep(&curr, " ");
-    args[i++] = token;
-    printf("%s\n", token);
+    //token = strsep(&curr, " ");
+    args[i++] = strsep(&curr, " ");
+    //printf("%s\n", token);
   }
   args[i] = NULL;
   return args;
