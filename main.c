@@ -4,11 +4,16 @@
 #include <unistd.h>
 
 char ** parse_args(char *line){
-  char **args = malloc(6 * sizeof(char *));
+  int arsize = 5;
+  char **args = malloc(arsize * sizeof(char *));
   char *curr = line;
   int i = 0;
   while (*curr != '\0'){
     args[i++] = strsep(&curr, " ");
+    if (i > arsize){
+      arsize *= 2;
+      args = realloc(arsize * sizeof(char *));
+    }
   }
   args[i] = NULL;
   return args;
