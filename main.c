@@ -21,7 +21,11 @@ char ** parse_args(char *line){
 }
 
 int main(){
-  char **args = malloc(sizeof(parse_args("ls -a -l")));
+  //char **args = malloc(sizeof(parse_args("ls -a -l")));
+  printf("> ");
+  char buf[128];
+  fgets(buf,128,stdin);
+  char **args = parse_args(buf);
   execvp(args[0], args);
   free(args);
 }
