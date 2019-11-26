@@ -4,6 +4,7 @@
 #include <unistd.h>
 
 char ** parse_args(char *line){
+  printf("test");
   int arsize = 6;
   char **args = malloc(arsize * sizeof(char *));
   char *curr = line;
@@ -20,8 +21,7 @@ char ** parse_args(char *line){
 }
 
 int main(){
-  printf("test");
-  char **args = parse_args("ls -a -l\0");
+  char **args = parse_args("ls -a -l");
   execvp(args[0], args);
   free(args);
 }
